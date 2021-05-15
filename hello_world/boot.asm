@@ -1,7 +1,7 @@
 org 0x7c00
 bits 16
 
-start:
+init:
     cli
     mov si, msg
     mov ah, 0x0e
@@ -10,9 +10,9 @@ start:
     cmp al, 0
     je end
     int 0x10
-    jmp .loop
+    jmp .fin
 
-end:
+fin:
     hlt
 msg:
     db "Hello, World!", 0
