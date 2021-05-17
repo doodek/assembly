@@ -8,9 +8,9 @@ init:
 .loop: 
     lodsb
     cmp al, 0
-    je end
+    je .fin
     int 0x10
-    jmp .fin
+    jmp .loop
 
 fin:
     hlt
